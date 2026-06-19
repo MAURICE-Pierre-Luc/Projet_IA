@@ -182,11 +182,14 @@ def predict(csv_path):
     df = pd.read_csv(csv_path, encoding="utf-8")
     print(f"CSV chargé : {len(df)} lignes")
 
+
     # preprocessing custom (identique training)
     df = preprocess(df, encoder_cat)
 
     # features final
     X = df[FEATURE_COLS]
+
+
 
     # sklearn preprocessing
     X_prep = preprocessor.transform(X)
@@ -197,9 +200,10 @@ def predict(csv_path):
     return df
 
 
-csv_path = "./Besoin_Client_3/IRVE_clean_IA.csv"
-df_result = predict(csv_path)
+if __name__ == "__main__":
+    csv_path = "./Besoin_Client_3/IRVE_clean_IA.csv"
+    df_result = predict(csv_path)
 
-print(df_result[["horaires", "prediction"]].head(10))
+    print(df_result[["horaires", "prediction"]].head(10))
 
 

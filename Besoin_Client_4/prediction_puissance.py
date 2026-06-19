@@ -8,15 +8,15 @@ def main():
 
     # 1. Chargement des fichiers de sauvegarde (.pkl)
     try:
-        preprocesseur = joblib.load('preprocessor_besoin4.pkl')
-        model = joblib.load('best_classifier_besoin4.pkl')
+        preprocesseur = joblib.load('./Besoin_Client_4/preprocessor_besoin4.pkl')
+        model = joblib.load('./Besoin_Client_4/best_classifier_besoin4.pkl')
         print("[INFO] Modèle d'IA et préprocesseur chargés avec succès !\n")
     except FileNotFoundError:
-        print("❌ Erreur : Les fichiers '.pkl' sont introuvables dans ce dossier.")
+        print("Erreur : Les fichiers '.pkl' sont introuvables dans ce dossier.")
         print("Veuillez vérifier que vous avez bien exécuté les cellules précédentes.")
         return
 
-    # 2. Formulaire interactif pour le client / le prof
+    # 2. Formulaire interactif pour le client
     print("--- Saisie des caractéristiques de la nouvelle station ---")
 
     nom_operateur = input("Nom de l'opérateur (ex: Freshmile, TotalEnergies, IECharge) : ")

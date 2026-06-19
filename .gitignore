@@ -428,5 +428,5 @@ FodyWeavers.xsd
 *.msm
 *.msp
 
-IRVE_clean_IA.csv
+*IRVE_clean_IA.csv
 /venv
